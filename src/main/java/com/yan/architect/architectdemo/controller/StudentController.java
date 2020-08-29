@@ -1,7 +1,7 @@
 package com.yan.architect.architectdemo.controller;
 
-import com.yan.architect.architectdemo.common.ResultEnum;
-import com.yan.architect.architectdemo.common.ResultVo;
+import com.yan.architect.architectdemo.common.entity.ResultEnum;
+import com.yan.architect.architectdemo.common.entity.ResultVO;
 import com.yan.architect.architectdemo.pojo.Student;
 import com.yan.architect.architectdemo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,9 +28,9 @@ public class StudentController {
 
 
     @RequestMapping("getList")
-    public ResultVo list(Student student) {
+    public ResultVO list(Student student) {
         List<Student> list = studentService.changeModel(studentService.queryAll(student));
-        return ResultVo.result(ResultEnum.SUCCESS);
+        return ResultVO.result(ResultEnum.SUCCESS);
     }
 
 
@@ -38,17 +38,17 @@ public class StudentController {
      * 查询id
      */
     @RequestMapping("/{id}")
-    public ResultVo detail(@PathVariable Integer id) {
+    public ResultVO detail(@PathVariable Integer id) {
         Student student = studentService.changePojo(studentService.queryById(id));
-        return ResultVo.result(ResultEnum.SUCCESS);
+        return ResultVO.result(ResultEnum.SUCCESS);
     }
 
     /**
      * 新增
      */
     @RequestMapping("insert")
-    public ResultVo addSave(Student student) {
-        return ResultVo.result(ResultEnum.SUCCESS);
+    public ResultVO addSave(Student student) {
+        return ResultVO.result(ResultEnum.SUCCESS);
     }
 
 
@@ -56,17 +56,17 @@ public class StudentController {
      * 修改
      */
     @RequestMapping("update")
-    public ResultVo update(Student student) {
+    public ResultVO update(Student student) {
         Integer i = studentService.update(student);
-        return ResultVo.result(ResultEnum.SUCCESS);
+        return ResultVO.result(ResultEnum.SUCCESS);
     }
 
     /**
      * 删除
      */
     @RequestMapping("del/{id}")
-    public ResultVo delete(@PathVariable Integer id) {
+    public ResultVO delete(@PathVariable Integer id) {
         Boolean i = studentService.deleteById(id);
-        return ResultVo.result(ResultEnum.SUCCESS);
+        return ResultVO.result(ResultEnum.SUCCESS);
     }
 }

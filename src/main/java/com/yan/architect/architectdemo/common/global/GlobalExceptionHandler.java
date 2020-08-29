@@ -1,7 +1,7 @@
 package com.yan.architect.architectdemo.common.global;
 
 import com.fasterxml.jackson.databind.JsonMappingException;
-import com.yan.architect.architectdemo.common.ResultVo;
+import com.yan.architect.architectdemo.common.entity.ResultVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.ConversionNotSupportedException;
@@ -35,104 +35,104 @@ public class GlobalExceptionHandler {
     //运行时异常
     @ExceptionHandler(RuntimeException.class)
     @ResponseBody
-    public ResultVo<String> runtimeExceptionHandler(RuntimeException runtimeException) {
+    public ResultVO<String> runtimeExceptionHandler(RuntimeException runtimeException) {
         return result(ErrorConstant.RUNTIME_EXCEPTION.getCode(), ErrorConstant.RUNTIME_EXCEPTION.getMsg(), runtimeException);
     }
 
     //空指针异常
     @ExceptionHandler(NullPointerException.class)
     @ResponseBody
-    public ResultVo<String> nullPointerExceptionHandler(NullPointerException ex) {
+    public ResultVO<String> nullPointerExceptionHandler(NullPointerException ex) {
         return result(ErrorConstant.NULL_POINTER_EXCEPTION.getCode(), ErrorConstant.NULL_POINTER_EXCEPTION.getMsg(), ex);
     }
 
     //类型转换异常
     @ExceptionHandler(ClassCastException.class)
     @ResponseBody
-    public ResultVo<String> classCastExceptionHandler(ClassCastException ex) {
+    public ResultVO<String> classCastExceptionHandler(ClassCastException ex) {
         return result(ErrorConstant.CLASS_CAST_EXCEPTION.getCode(), ErrorConstant.CLASS_CAST_EXCEPTION.getMsg(), ex);
     }
 
     //IO异常
     @ExceptionHandler(IOException.class)
     @ResponseBody
-    public ResultVo<String> iOExceptionHandler(IOException ex) {
+    public ResultVO<String> iOExceptionHandler(IOException ex) {
         return result(ErrorConstant.IO_EXCEPTION.getCode(), ErrorConstant.IO_EXCEPTION.getMsg(), ex);
     }
 
     //未知方法异常
     @ExceptionHandler(NoSuchMethodException.class)
     @ResponseBody
-    public ResultVo<String> noSuchMethodExceptionHandler(NoSuchMethodException ex) {
+    public ResultVO<String> noSuchMethodExceptionHandler(NoSuchMethodException ex) {
         return result(ErrorConstant.NO_SUCH_METHOD_EXCEPTION.getCode(), ErrorConstant.NO_SUCH_METHOD_EXCEPTION.getMsg(), ex);
     }
 
     //数组越界异常
     @ExceptionHandler(IndexOutOfBoundsException.class)
     @ResponseBody
-    public ResultVo<String> indexOutOfBoundsExceptionHandler(IndexOutOfBoundsException ex) {
+    public ResultVO<String> indexOutOfBoundsExceptionHandler(IndexOutOfBoundsException ex) {
         return result(ErrorConstant.INDEX_OUT_OF_BOUNDS_EXCEPTION.getCode(), ErrorConstant.INDEX_OUT_OF_BOUNDS_EXCEPTION.getMsg(), ex);
     }
 
     //网络异常
     @ExceptionHandler(ConnectException.class)
     @ResponseBody
-    public ResultVo<String> connectException(ConnectException ex) {
+    public ResultVO<String> connectException(ConnectException ex) {
         return result(ErrorConstant.CONNECT_EXCEPTION.getCode(), ErrorConstant.CONNECT_EXCEPTION.getMsg(), ex);
     }
 
     //400错误
     @ExceptionHandler({HttpMessageNotReadableException.class})
     @ResponseBody
-    public ResultVo<String> requestNotReadable(HttpMessageNotReadableException ex) {
+    public ResultVO<String> requestNotReadable(HttpMessageNotReadableException ex) {
         return result(ErrorConstant.BAD_REQUEST.getCode(), ErrorConstant.BAD_REQUEST.getMsg(), ex);
     }
 
     //400错误
     @ExceptionHandler({TypeMismatchException.class})
     @ResponseBody
-    public ResultVo<String> requestTypeMismatch(TypeMismatchException ex) {
+    public ResultVO<String> requestTypeMismatch(TypeMismatchException ex) {
         return result(ErrorConstant.BAD_REQUEST.getCode(), ErrorConstant.BAD_REQUEST.getMsg(), ex);
     }
 
     //400错误
     @ExceptionHandler({MissingServletRequestParameterException.class})
     @ResponseBody
-    public ResultVo<String> requestMissingServletRequest(MissingServletRequestParameterException ex) {
+    public ResultVO<String> requestMissingServletRequest(MissingServletRequestParameterException ex) {
         return result(ErrorConstant.BAD_REQUEST.getCode(), ErrorConstant.BAD_REQUEST.getMsg(), ex);
     }
 
     @ExceptionHandler({ServletException.class})
     @ResponseBody
-    public ResultVo<String> http404(ServletException ex) {
+    public ResultVO<String> http404(ServletException ex) {
         return result(ErrorConstant.NOT_FOUND_REQUEST.getCode(), ErrorConstant.NOT_FOUND_REQUEST.getMsg(), ex);
     }
 
     //405错误
     @ExceptionHandler({HttpRequestMethodNotSupportedException.class})
     @ResponseBody
-    public ResultVo<String> request405(HttpRequestMethodNotSupportedException ex) {
+    public ResultVO<String> request405(HttpRequestMethodNotSupportedException ex) {
         return result(ErrorConstant.METHOD_NOT_ALLOWED.getCode(), ErrorConstant.METHOD_NOT_ALLOWED.getMsg(), ex);
     }
 
     //406错误
     @ExceptionHandler({HttpMediaTypeNotAcceptableException.class})
     @ResponseBody
-    public ResultVo<String> request406(HttpMediaTypeNotAcceptableException ex) {
+    public ResultVO<String> request406(HttpMediaTypeNotAcceptableException ex) {
         return result(ErrorConstant.NOT_ACCEPTABLE.getCode(), ErrorConstant.NOT_ACCEPTABLE.getMsg(), ex);
     }
 
     //500错误
     @ExceptionHandler({ConversionNotSupportedException.class, HttpMessageNotWritableException.class})
     @ResponseBody
-    public ResultVo<String> server500(RuntimeException runtimeException) {
+    public ResultVO<String> server500(RuntimeException runtimeException) {
         return result(ErrorConstant.INTERNAL_SERVER_ERROR.getCode(), ErrorConstant.INTERNAL_SERVER_ERROR.getMsg(), runtimeException);
     }
 
 
     @ExceptionHandler({JsonMappingException.class})
     @ResponseBody
-    public ResultVo<String> jsonMappingException(JsonMappingException jsonMappingException) {
+    public ResultVO<String> jsonMappingException(JsonMappingException jsonMappingException) {
         return result(ErrorConstant.ERROR_FORMAT_PARAMETER.getCode(), ErrorConstant.ERROR_FORMAT_PARAMETER.getMsg(), jsonMappingException);
     }
 
@@ -147,8 +147,8 @@ public class GlobalExceptionHandler {
      */
 
 
-    private ResultVo<String> result(int errCode, String errMsg, Exception e) {
-        ResultVo<String> ResultVo = new ResultVo<String>(errCode, errMsg);
+    private ResultVO<String> result(int errCode, String errMsg, Exception e) {
+        ResultVO<String> ResultVo = new ResultVO<String>(errCode, errMsg);
 
         logException(e);
 

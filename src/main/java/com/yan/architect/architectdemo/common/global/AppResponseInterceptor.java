@@ -1,8 +1,7 @@
 package com.yan.architect.architectdemo.common.global;
 
 import com.alibaba.fastjson.JSON;
-import com.marcopolo.marcopoloplatform.common.bean.ResultDO;
-import com.marcopolo.marcopoloplatform.common.interetpor.AppInterceptors;
+import com.yan.architect.architectdemo.common.entity.ResultAdviceVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.MethodParameter;
@@ -41,7 +40,7 @@ public class AppResponseInterceptor implements ResponseBodyAdvice {
         // 响应结果执行
         if(mediaType != null && o != null
                 && mediaType.includes(MediaType.APPLICATION_JSON)
-                && o instanceof ResultDO){
+                && o instanceof ResultAdviceVO){
 
             if(serverHttpRequest instanceof ServletServerHttpRequest){
 

@@ -1,27 +1,10 @@
+/*
 package com.yan.architect.architectdemo.common.utils;
 
-import com.marcopolo.marcopoloplatform.config.AppProperties;
-import com.marcopolo.marcopoloplatform.model.Token;
+import com.yan.architect.architectdemo.common.config.AppProperties;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.http.protocol.HttpService;
 import org.springframework.core.io.ClassPathResource;
-import org.tweb3j.crypto.*;
-import org.tweb3j.utils.Convert;
-import org.tweb3j.utils.Numeric;
-import org.web3j.abi.FunctionEncoder;
-import org.web3j.abi.FunctionReturnDecoder;
-import org.web3j.abi.TypeReference;
-import org.web3j.abi.datatypes.*;
-import org.web3j.abi.datatypes.generated.Uint256;
-import org.web3j.crypto.ECKeyPair;
-import org.web3j.crypto.Keys;
-import org.web3j.crypto.WalletUtils;
-import org.web3j.protocol.Web3j;
-import org.web3j.protocol.core.DefaultBlockParameter;
-import org.web3j.protocol.core.DefaultBlockParameterName;
-import org.web3j.protocol.core.methods.request.Transaction;
-import org.web3j.protocol.core.methods.response.*;
-import org.web3j.protocol.http.HttpService;
-import party.loveit.bip44forjava.utils.Bip44Utils;
 
 import java.io.*;
 import java.math.BigDecimal;
@@ -34,11 +17,13 @@ public class Web3jUtils {
 
     public static void main(String[] args) throws Exception {
         //System.out.println(getBalance("https://rpc.truescan.network/testnet","0xa596bda0ea79c9478ab0071fc91d1fb02a3a57e8"));
-        /*System.out.println(getBalanceERC20(
+        */
+/*System.out.println(getBalanceERC20(
             "https://rpc.truescan.network/testnet",
             "TRUE",
             "0xdb21abddd12a51caf155c16c5ed075c9f2183b9f",
-            "0x189cF5e2079686ff909EfdA350D5c66d28B6857a"));*/
+            "0x189cF5e2079686ff909EfdA350D5c66d28B6857a"));*//*
+
 
         System.out.println(checkTransIsSuccess("0xf4454596b2949c29674f4ceaacb41c0101b9d810531156f19fe6113cb935123e"));
     }
@@ -194,13 +179,15 @@ public class Web3jUtils {
         return map;
     }
 
-    /*
+    */
+/*
      * 获取代币余额
      * url 节点地址
      * chain 所属链
      * accountAddress 账户地址
      * contractAddress 代币合约地址
-     */
+     *//*
+
     @SuppressWarnings("rawtypes")
     public static String getBalanceERC20(String url, String chain, String accountAddress,
                                          String contractAddress, String tokenType) {
@@ -279,11 +266,13 @@ public class Web3jUtils {
     }
 
 
-    /*
+    */
+/*
      * 获取主币余额
      * url 节点地址
      * address 账户地址
-     */
+     *//*
+
     public static String getBalance(String url, String address) throws IOException {
         Web3j web3j = Web3j.build(new HttpService(url));
         EthGetBalance ethGetBalance1 = web3j.ethGetBalance(address, DefaultBlockParameter.valueOf("latest")).send();
@@ -466,7 +455,8 @@ public class Web3jUtils {
     }
 
 
-    /**
+    */
+/**
      * 查交易信息
      * <p>
      * private String hash;
@@ -489,7 +479,8 @@ public class Web3jUtils {
      *
      * @param transHash
      * @return
-     */
+     *//*
+
     public static org.web3j.protocol.core.methods.response.Transaction queryTransactionByHash(String transHash) {
         try {
             Web3j web3j = Web3j.build(new HttpService("https://rpc.truechain.network"));
@@ -502,7 +493,8 @@ public class Web3jUtils {
         }
     }
 
-    /**
+    */
+/**
      * 查交易快照 gasUsed status等
      * <p>
      * private String transactionHash;
@@ -521,7 +513,8 @@ public class Web3jUtils {
      *
      * @param transHash
      * @return
-     */
+     *//*
+
     public static org.web3j.protocol.core.methods.response.TransactionReceipt queryEthGetTransactionReceiptByHash(String transHash) {
         try {
             EthGetTransactionReceipt transactionReceipt = web3j.ethGetTransactionReceipt(transHash).send();
@@ -532,14 +525,16 @@ public class Web3jUtils {
         }
     }
 
-    /**
+    */
+/**
      * 判断交易是否执行成功
      *
      * @param txHash   交易hash
      * @return 1 表示执行成功
      * 2 表示执行失败
      * 0 表示还未执行
-     */
+     *//*
+
     public static String checkTransIsSuccess(String txHash) {
         //确认交易已执行
         EthGetTransactionReceipt receipt = null;
@@ -575,3 +570,4 @@ public class Web3jUtils {
     }
 }
 
+*/

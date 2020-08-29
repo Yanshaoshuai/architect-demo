@@ -2,7 +2,7 @@ package com.yan.architect.architectdemo.common.utils;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.marcopolo.marcopoloplatform.model.EmailModel;
+import com.yan.architect.architectdemo.pojo.EmailModel;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;

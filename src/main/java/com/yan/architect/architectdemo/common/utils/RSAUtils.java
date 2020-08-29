@@ -45,7 +45,7 @@ public class RSAUtils {
         System.err.println("公钥加密——私钥解密");
         String inputStr = "www.Baidu.com$";
         byte[] encodedData = RSAUtils.encryptByPublicKey(inputStr, publicKey);
-        byte[] decodedData = RSAUtils.decryptByPrivateKey(encodedData,
+        byte[] decodedData =RSAUtils.decryptByPrivateKey(encodedData,
                 privateKey);
         String outputStr = new String(decodedData);
         System.err.println("加密前: " + inputStr + "\n\r" + "解密后: " + outputStr);
@@ -56,7 +56,7 @@ public class RSAUtils {
         System.err.println("私钥加密——公钥解密");
         String inputStr = "www.Hao123.com$";
         byte[] data = inputStr.getBytes();
-        byte[] encodedData = RSAUtils.encryptByPrivateKey(data, privateKey);
+        byte[] encodedData =RSAUtils.encryptByPrivateKey(data, privateKey);
         byte[] decodedData = RSAUtils.decryptByPublicKey(encodedData, publicKey);
         String outputStr = new String(decodedData);
         System.err.println("加密前: " + inputStr + "\n\r" + "解密后: " + outputStr);

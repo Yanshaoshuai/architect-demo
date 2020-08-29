@@ -1,8 +1,5 @@
 package com.yan.architect.architectdemo.common.utils;
-
-import com.marcopolo.marcopoloplatform.common.utils.CommonUtil;
-import com.marcopolo.marcopoloplatform.common.utils.DateUtils;
-import com.marcopolo.marcopoloplatform.config.AppProperties;
+import com.yan.architect.architectdemo.common.config.AppProperties;
 
 import java.sql.*;
 import java.text.ParseException;

@@ -53,7 +53,7 @@ public class SyncIpDBConfig {
                 
                 System.out.println(uidStr + " " + ipStr + " " + country + " " + region + " " + city);
                 updateInfoByIp(country,region,city,uidStr);
-                Thread.currentThread().sleep(10000);
+                Thread.sleep(10000);
             }
             System.out.println("处理完了！！！");
         } catch (Exception e) {

@@ -1,0 +1,65 @@
+#正式环境
+spring:
+  datasource:
+    oms.url: jdbc:mysql://localhost:3306/architect?characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    oms.username: yanshaoshuai
+    oms.password: 123456
+    oms.type: com.alibaba.druid.pool.DruidDataSource
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    password: Mp_i3-39218#91OoM
+    timeout: 5000
+    jedis:
+      pool:
+        max-active: 1000
+        max-wait: -1
+        max-idle: 10
+        min-idle: 1
+app:
+  sms:
+    url: https://smsservice/sms2b/sms/sendMsg
+    publicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiCU0HXbSs2/68W/28i4Px4zVo8AVgiMreDi/1G9mlG6P0QQNu5L1L5zVyaJRzk1E4dbSer2c4h/cmniidb+TAr2nx9pp7KQRO5j3v85SbT4z3UWSo+VNS8rQ4GWbTRXNw13Ck3TP7KaiyM49XiJpnnn1SU5PyXjxfZGO2Jihb4QFjmphSe8JRuQAhYpCfkQ7tGPUeowkfVM8hr+UHgq1oesdVjjaU5edgcJ7C22KTdJjJE9Yv76XIgJ90tLE09o+rZWa8Gnp1etPTa+RLEj7/LdiEg7VK08vb/zF2r7qNvN0SCj3dDfj70jDcwWTZL0yHXKYpvt/wm6VMYsRn8G0swIDAQAB
+  email:
+    whiteList: aol.com,att.net,comcast.net,facebook.com,gmail.com,gmx.com,googlemail.com,google.com,hotmail.com,hotmail.co.uk,mac.com,me.com,mail.com,msn.com,live.com,sbcglobal.net,verizon.net,yahoo.com,yahoo.co.uk,email.com,fastmail.fm,games.com,gmx.net,hush.com,hushmail.com,icloud.com,iname.com,inbox.com,lavabit.com,love.com,outlook.com,pobox.com,rocketmail.com,safe-mail.net,wow.com,ygm.com,ymail.com,zoho.com,yandex.com,bellsouth.net,charter.net,cox.net,earthlink.net,juno.com,btinternet.com,virginmedia.com,blueyonder.co.uk,freeserve.co.uk,live.co.uk,ntlworld.com,o2.co.uk,orange.net,sky.com,talktalk.co.uk,tiscali.co.uk,virgin.net,wanadoo.co.uk,bt.com,naver.com,hanmail.net,daum.net,nate.com,yahoo.co.jp,yahoo.co.kr,yahoo.co.id,yahoo.co.in,yahoo.com.sg,yahoo.com.ph,hotmail.fr,live.fr,laposte.net,yahoo.fr,wanadoo.fr,orange.fr,gmx.fr,sfr.fr,neuf.fr,free.fr,gmx.de,hotmail.de,live.de,online.de,t-online.de,web.de,yahoo.de,libero.it,virgilio.it,hotmail.it,aol.it,tiscali.it,alice.it,live.it,yahoo.it,email.it,tin.it,poste.it,teletu.it,mail.ru,rambler.ru,yandex.ru,ya.ru,list.ru,hotmail.be,live.be,skynet.be,voo.be,tvcablenet.be,telenet.be,hotmail.com.ar,live.com.ar,yahoo.com.ar,fibertel.com.ar,speedy.com.ar,arnet.com.ar,yahoo.com.mx,live.com.mx,hotmail.es,hotmail.com.mx,prodigy.net.mx,yahoo.com.br,hotmail.com.br,outlook.com.br,uol.com.br,bol.com.br,terra.com.br,ig.com.br,itelefonica.com.br,r7.com,zipmail.com.br,globo.com,globomail.com,oi.com.br,yandex.kz,ukr.net,onet.pl,myway.com,iol.pt,index.hu,blic.rs,mail.ru,ac.auone-net.jp,gazeta.pl,vnexpress.net,walla.co.il,origo.hu,o2.pl,seznam.cz,szn.cz,docomo.ne.jp,24sata.hr,dagbladet.no,iltalehti.fi,wp.pl,interia.pl,freemail.hu,zing.vn,index.hr,sapo.pt,bit.ly,net.hr,serenitysource.com.au,serenitysource.io,auset.net.au,coinchase.com
+  web3j:
+    address: http://172.21.145.85:8545
+    chainId: 19330
+    ethersacnUrl: https://xxx/api?module=proxy&action=eth_getTransactionByHash&apikey=6YZ96W94RFB4B9W3ZHY121RGVNRKN38U4S&txhash=
+    ethersacnTxLogUrl: https://xxx/api?module=account&action=txlist&sort=desc&apikey=6YZ96W94RFB4B9W3ZHY121RGVNRKN38U4S&address=
+    ethWeb3jAddress: http://172.21.145.93:8545
+    btcAddress: https://chainservice.digitalchainall.com
+    prinPoolContractAddress: 8bEd8cc64F0153a43445c650bA2C59Bb2e99d879
+    rewardPoolContractAddress: 799043F064BB5B8afCdd1086b7016dec131873cc
+    tokenContractAddress: 189cF5e2079686ff909EfdA350D5c66d28B6857a
+    rateUrl: https://min-api.cryptocompare.com/data/pricemulti?fsyms=ETH,TRUE,TUSD,USDT,BTC&tsyms=CNY,USD,THB,KRW,VND,EUR,TRY
+
+  upload:
+    file-path: /home/data/upload/files/
+    image-path: /home/data/upload/dappImage/
+    image-url: https://realmName/dappImage/
+
+  mysql:
+    url: jdbc:mysql://localhost:3306/architect?characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: yanshaoshuai
+    password: 123456
+
+    #    数据源其他配置
+    oms.initialSize: 5
+    oms.minIdle: 5
+    oms.maxActive: 20
+    oms.maxWait: 60000
+    oms.timeBetweenEvictionRunsMillis: 60000
+    oms.minEvictableIdleTimeMillis: 300000
+    oms.validationQuery: SELECT 1 FROM DUAL
+    oms.testWhileIdle: true
+    oms.testOnBorrow: false
+    oms.testOnReturn: false
+    oms.poolPreparedStatements: true
+    #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+    oms.filters: stat,wall
+    #    ,log4j
+    oms.maxPoolPreparedStatementPerConnectionSize: 20
+    oms.useGlobalDataSourceStat: true
+    oms.connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500

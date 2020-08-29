@@ -1,10 +1,8 @@
 package com.yan.architect.architectdemo.common.filter;
 
-import com.marcopolo.marcopoloplatform.common.exception.BusinessException;
-import com.marcopolo.marcopoloplatform.common.utils.ApplicationContextProvider;
-import com.marcopolo.marcopoloplatform.common.utils.JwtUtil;
-import com.marcopolo.marcopoloplatform.model.User;
-import com.marcopolo.marcopoloplatform.service.ApiService;
+import com.yan.architect.architectdemo.common.exception.BusinessException;
+import com.yan.architect.architectdemo.common.utils.ApplicationContextProvider;
+import com.yan.architect.architectdemo.common.utils.JwtUtil;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureException;
@@ -60,7 +58,8 @@ public class JwtFilter extends GenericFilterBean {
                 
                 String account = (String)claims.get("account");
                 String password = (String)claims.get("password");
-                
+                /**
+                验证Token信息
                 ApiService apiService = (ApiService) ApplicationContextProvider.getBean(ApiService.class);
                 User user = apiService.queryUserByAccount(account);
                 if(user == null){
@@ -70,7 +69,9 @@ public class JwtFilter extends GenericFilterBean {
                 if(!password.equals(user.getPassword())){
                     throw new BusinessException(502,"2002");//Token校验失败,密码错误
                 }
-                
+                 *
+                 */
+
                 // Add the claim to request header
                 request.setAttribute("claims", claims);
             } catch (final SignatureException e) {
