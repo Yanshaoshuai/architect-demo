@@ -1,10 +1,25 @@
 #正式环境
 spring:
   datasource:
-    oms.url: jdbc:mysql://localhost:3306/architect?characterEncoding=utf-8&serverTimezone=Asia/Shanghai
-    oms.username: yanshaoshuai
-    oms.password: 123456
-    oms.type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://127.0.0.1:3306/architect?useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 30000
+      filters: stat
+      async-init: true
   redis:
     database: 0
     host: localhost
