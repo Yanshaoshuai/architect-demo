@@ -78,7 +78,7 @@ public class UserController {
      * @return R
      */
     @PostMapping
-    @ApiOperation(value = "新增用户表", notes = "新增用户表")
+    @ApiOperation(value = "新增用户", notes = "新增用户")
     public R saveUser(@RequestBody User user){
       log.info("saveUser-->{}",user);
       return R.success(userService.save(user));
@@ -90,10 +90,7 @@ public class UserController {
      * @return R
      */
     @PutMapping
-    @ApiOperation(value = "修改用户表", notes = "修改用户表")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "id", value = "主键id", required = true)
-    })
+    @ApiOperation(value = "修改用户", notes = "修改用户")
     public R updateUser(@RequestBody User user){
       log.info("updateUser-->{}",user);
       return R.success(userService.updateById(user));
