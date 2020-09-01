@@ -8,13 +8,13 @@ import org.springframework.stereotype.Service;
 import lombok.extern.slf4j.Slf4j;
 /**
  * <p>
- * 用户表
+ * 用户
  * </p>
  *
  * @package: com.yan.architect.architectdemo.service.impl
- * @description: 用户表
+ * @description: 用户
  * @author: Mr.Yan
- * @date: Created in 2020-09-01 00:01:46
+ * @date: Created in 2020-09-01 13:37:28
  * @copyright: Copyright (c) 2020
  * @version: V1.0
  * @modified: Mr.Yan

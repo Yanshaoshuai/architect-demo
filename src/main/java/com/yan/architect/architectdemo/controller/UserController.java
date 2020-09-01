@@ -17,13 +17,13 @@ import io.swagger.annotations.ApiImplicitParams;
 import lombok.extern.slf4j.Slf4j;
 /**
  * <p>
- * 用户表
+ * 用户
  * </p>
  *
  * @package:  com.yan.architect.architectdemo.controller
- * @description: 用户表
+ * @description: 用户
  * @author: Mr.Yan
- * @date: Created in 2020-09-01 00:01:46
+ * @date: Created in 2020-09-01 13:37:28
  * @copyright: Copyright (c) 2020
  * @version: V1.0
  * @modified: Mr.Yan
@@ -37,16 +37,13 @@ public class UserController {
     private  UserService userService;
 
     /**
-     * 分页查询用户表
+     * 分页查询用户
      * @param userDTO 数据传输对象
      * @return R
      */
     @GetMapping("/page")
-    @ApiOperation(value = "分页查询用户表", notes = "分页查询用户表")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "userDTO", value = "数据传输对象", required = true)
-    })
-    public R listUser(UserDTO userDTO) {
+    @ApiOperation(value = "分页查询用户", notes = "分页查询用户")
+    public R listUser(@ModelAttribute(name = "数据传输对象") UserDTO userDTO) {
         log.info("listUser-->{}",userDTO);
         Page page=new Page(userDTO.getPageNumber(),userDTO.getPageSize());
         User user=new User();
@@ -58,14 +55,14 @@ public class UserController {
 
 
     /**
-     * 通过id查询用户表
+     * 通过id查询用户
      * @param id id
      * @return R
      */
     @GetMapping("/{id}")
-    @ApiOperation(value = "通过id查询用户表", notes = "通过id查询用户表")
+    @ApiOperation(value = "通过id查询用户", notes = "通过id查询用户")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "id", value = "主键id", required = true)
+            @ApiImplicitParam(name = "id", value = "主键id", required = true,paramType="path")
     })
     public R getUser(@PathVariable("id") Long id){
       log.info("getUser-->{}",id);
@@ -73,8 +70,8 @@ public class UserController {
     }
 
     /**
-     * 新增用户表
-     * @param user 用户表
+     * 新增用户
+     * @param user 用户
      * @return R
      */
     @PostMapping
@@ -85,8 +82,8 @@ public class UserController {
     }
 
     /**
-     * 修改用户表
-     * @param user 用户表
+     * 修改用户
+     * @param user 用户
      * @return R
      */
     @PutMapping
@@ -97,14 +94,14 @@ public class UserController {
     }
 
     /**
-     * 通过id删除用户表
+     * 通过id删除用户
      * @param id id
      * @return R
      */
     @DeleteMapping("/{id}")
-    @ApiOperation(value = "删除用户表", notes = "删除用户表")
+    @ApiOperation(value = "删除用户", notes = "删除用户")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "id", value = "主键id", required = true)
+            @ApiImplicitParam(name = "id", value = "主键id", required = true,paramType="path")
     })
     public R deleteUser(@PathVariable Long id){
       log.info("deleteUser-->{}",id);

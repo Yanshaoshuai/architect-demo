@@ -13,11 +13,11 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 /**
  * <p>
- * 用户表
+ * 用户
  * </p>
- * @description: 用户表
+ * @description: 用户
  * @author: Mr.Yan
- * @date: Created in 2020-09-01 00:01:46
+ * @date: Created in 2020-09-01 13:37:28
  * @copyright: Copyright (c) 2020
  */
 @Data
