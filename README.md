@@ -3,7 +3,7 @@
 ### 1.说明
 >SpringBoot项目脚手架,包括基础的封装类,代码功能(增删改查，分页),druid数据源,mybatis-plus代码结构,swagger文档,以及上述用到的所有工具的配置
 
-###2.实践
+### 2.实践
 > 克隆项目
 
 > 克隆https://github.com/Yanshaoshuai/codegen
