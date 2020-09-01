@@ -6,7 +6,7 @@
 ### 2.实践
 > 克隆本项目
 
-> 克隆https://github.com/Yanshaoshuai/codegen代码生成项目
+> 克隆https://github.com/Yanshaoshuai/codegen 代码生成项目
 
 > 使用codegen生成代码
 
