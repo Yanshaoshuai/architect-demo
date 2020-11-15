@@ -4,17 +4,22 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.yan.architect.architectdemo.common.PageResult;
 import com.yan.architect.architectdemo.common.R;
+import com.yan.architect.architectdemo.pojo.ArtCrowd;
 import com.yan.architect.architectdemo.pojo.User;
 import com.yan.architect.architectdemo.pojo.dto.UserDTO;
 import com.yan.architect.architectdemo.service.UserService;
+import io.swagger.annotations.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
+
 /**
  * <p>
  * 用户
@@ -108,4 +113,14 @@ public class UserController {
       return R.success(userService.removeById(id));
     }
 
+    /**
+     * excel导入
+     */
+    @PostMapping(value = "/import",headers = "content-type=multipart/form-data")
+    @ApiOperation(value = "导入excel", notes = "导入excel")
+    public R importUserExcel(@ApiParam(value = "file", required = true)MultipartFile file) throws IOException {
+        InputStream inputStream = file.getInputStream();
+        List<ArtCrowd> artCrowds = userService.importExcel(inputStream);
+        return R.success(artCrowds);
+    }
 }

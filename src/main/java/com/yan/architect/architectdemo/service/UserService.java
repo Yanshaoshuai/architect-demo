@@ -1,7 +1,11 @@
 package com.yan.architect.architectdemo.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.yan.architect.architectdemo.pojo.ArtCrowd;
 import com.yan.architect.architectdemo.pojo.User;
+
+import java.io.InputStream;
+import java.util.List;
 
 /**
  * <p>
@@ -17,5 +21,10 @@ import com.yan.architect.architectdemo.pojo.User;
  * @modified: Mr.Yan
  */
 public interface UserService extends IService<User> {
-
+    /**
+     * excel导入
+     * @param inputStream
+     * @return
+     */
+    public List<ArtCrowd> importExcel(InputStream inputStream);
 }
